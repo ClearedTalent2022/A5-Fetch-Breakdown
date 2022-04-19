@@ -2,15 +2,34 @@
 
 window.addEventListener("load", function () {
 
-    let listedPlanets;
-    // Set listedPlanetsResponse equal to the value returned by calling myFetch()
-    let listedPlanetsResponse;
-    listedPlanetsResponse.then(function (result) {
-        listedPlanets = result;
-        console.log(listedPlanets);
-    }).then(function () {
-        console.log(listedPlanets);
-        // Below this comment call the appropriate helper functions to pick a planet fom the list of planets and add that information to your destination.
+    // You could opt to move the pickPlanet function declaration into script.js to complete
+    // the section on selecting a random planet! Up to you...
+    function pickPlanet(planets) {
+
+    }
+
+    // fetch planet json data from handlers.education.launchcode.org/static/planets.json
+    fetch("handlers.education.launchcode.org/static/planets.json").then(function (response) {
+        response.json(function (jsonArray) {
+            console.log(jsonArray);
+            // We should code write the rest of this step for displaying randomly
+            // selected planet JSON data in this scope, as this is the only spot
+            // in which we have access to our array of planet json!
+            // 1. Select random planet object from jsonArray
+            // 2. Display the random planet's data in the missionTarget div in index.html
+            // Here is the HTML formatting for our mission target div.
+            /*
+                         <h2>Mission Destination</h2>
+                         <ol>
+                             <li>Name: </li>
+                             <li>Diameter: </li>
+                             <li>Star: ${star}</li>
+                             <li>Distance from Earth: </li>
+                             <li>Number of Moons: </li>
+                         </ol>
+                         <img src="">
+            */
+        })
     })
 
     // select our form HTML element
